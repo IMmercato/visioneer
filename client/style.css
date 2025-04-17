@@ -1,0 +1,147 @@
+@use "@material";
+
+body {
+  font-family: roboto;
+  margin: 0;
+  background-color: #333;
+  color: #3d3d3d;
+  --mdc-theme-primary: #007f8b;
+  --mdc-theme-on-primary: #f1f3f4;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Info box in the center */
+#info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 75%;
+  background-color: rgba(128, 128, 128, 0.2);
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 5;
+  text-align: center;
+  color: white;
+  font-family: Tahoma, sans-serif;
+  text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+}
+.typewriter-header,
+.typewriter-text {
+  overflow: hidden;
+  /* Ensures content is hidden until "typed" */
+  white-space: nowrap;
+  /* Prevents text wrapping */
+  border-right: 0.15em solid rgba(255, 255, 255, 0.75);
+  /* The blinking cursor */
+  margin: 0 auto;
+  /* Center horizontally */
+}
+.typewriter-header {
+  font-size: 3em;
+  font-weight: 700;
+  width: 0;
+  /* Start with zero width */
+  animation: typingHeader 4s steps(15, end) 1s forwards,
+    blinkCaret 500ms steps(15, end) infinite;
+}
+.typewriter-text {
+  font-family: Arial, sans-serif;
+  font-size: 1.5em;
+  font-weight: normal;
+  margin-top: 20px;
+  width: 0;
+  /* Start with zero width */
+  animation: typingText 4s steps(40, end) 1.5s forwards,
+    blinkCaret 500ms steps(40, end) infinite;
+}
+@keyframes typingHeader {
+  from {
+    width: 0;
+  }
+  to {
+    width: 12.5ch;
+  }
+}
+@keyframes typingText {
+  from {
+    width: 0;
+  }
+  to {
+    width: 67.5ch;
+  }
+}
+@keyframes blinkCaret {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+#webcamButton {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+video,
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+#scoreboard {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 5;
+  text-align: center;
+  display: none;
+}
+
+#scoreboard-text {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#scoreboard-content-text {
+  font-size: 24px;
+  color: #007f8b;
+}
+
+.random-block {
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.drop-zone {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background-color: rgba(0, 255, 0, 0.2);
+  border: 3px dashed #00ff00;
+  text-align: center;
+  line-height: 200px;
+  color: #007f8b;
+  font-size: 20px;
+  font-weight: bold;
+}

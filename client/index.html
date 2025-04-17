@@ -1,0 +1,44 @@
+<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="style.css">
+
+<body>
+    <div id="info">
+        <h1 class="typewriter-header">Visioneer Game</h1>
+        <p class="typewriter-text">
+            Use your index finger to move the boxes into the drop zone and light up your score!
+        </p>
+    </div>
+
+    <div id="scoreboard">
+        <div id="scoreboard-text">Scoreboard</div>
+        <div id="scoreboard-content">
+            <div id="scoreboard-content-text">0</div>
+        </div>
+    </div>
+
+    <div id="dropZone" class="drop-zone">
+        Drag and drop boxes here!
+    </div>
+
+    <button id="webcamButton" class="mdc-button mdc-button--raised">
+        <span class="mdc-button__ripple"></span>
+        <span class="mdc-button__label">Start Playing</span>
+    </button>
+
+    <video id="webcam" autoplay playsinline></video>
+    <canvas class="output_canvas" id="output_canvas"></canvas>
+
+    <script type="module" src="client.js"></script>
+    <script>
+    </script>
+</body>
+
+<!--
+  \_\_\
+  |0__0|
+   \__/
+-->
