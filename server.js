@@ -13,6 +13,9 @@ const server = http.createServer(app);
 app.get('/', async (req, res) => {
     res.sendFile(__dirname + '/client/index.html');
 });
+app.get('/idk', async (req, res) => {
+    res.sendFile(__dirname + '/client/idk.html');
+});
 app.use((req, res, next) => {
     res.status(404).sendFile(__dirname + '/client/404.html');
 });
